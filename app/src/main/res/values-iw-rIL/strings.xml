@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">מספרה</string>
+    <string name="next">הבא</string>
+    <string name="previous">הקודם</string>
+    <string name="continue_">המשך</string>
+    <string name="ok">אישור</string>
+    <string name="cancel">ביטול</string>
+    <string name="phone_number">מספר פלאפון</string>
+    <string name="verification_code">קוד אימות</string>
+
+    <string name="sign_in_cancelled">ההתחברות נכשלה</string>
+    <string name="no_internet_connection">אין חיבור אינטרנט</string>
+    <string name="unknown_error">שגיאה לא ידועה</string>
+    <string name="input_name">השם שלך</string>
+    <string name="input_name_msg">הקלד בבקשה את השם המלא</string>
+    <string name="time">זמן הגעה</string>
+    <string name="type">סוג</string>
+    <string name="hair_straightening">החלקה</string>
+    <string name="hair_do">תסרוקת</string>
+    <string name="hair_cut">תספורת</string>
+    <string name="hair_color">Hair Dye</string>
+
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">HairSalon</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="continue_">Continue</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="verification_code">Verification Code</string>
+
+    <string name="sign_in_cancelled">Sign In Cancelled</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="unknown_error">unknown error</string>
+    <string name="input_name">Your Name</string>
+    <string name="input_name_msg">Please Enter Your Full Name</string>
+    <string name="time">TIME</string>
+    <string name="type">Type</string>
+    <string name="hair_color">Hair Dye</string>
+    <string name="hair_straightening">Hair Straightening</string>
+    <string name="hair_do">Hairdo</string>
+    <string name="hair_cut">Haircut</string>
+
+
+</resources>

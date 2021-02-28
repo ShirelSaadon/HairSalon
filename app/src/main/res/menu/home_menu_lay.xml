@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item1_services"
+        android:title="Services"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/item2_customersTell"
+        android:title="Customers tell"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/item3_makeAnAppointment"
+        android:title="Make an appointment"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/item4_contactUs"
+        android:title="Contact Us"
+        app:showAsAction="never"/>
+</menu>
