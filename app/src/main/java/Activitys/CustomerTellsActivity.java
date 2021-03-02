@@ -30,7 +30,7 @@ public class CustomerTellsActivity extends AppCompatActivity implements UserCall
     private String userGson ;
     private User user;
     private ArrayList<Review> reviewList=new ArrayList<Review>();
-
+////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate: ");
