@@ -143,6 +143,8 @@ public class EventDialog extends Dialog implements nextValidCallBack {
     private void initSpinner() {
         Log.d(TAG, "initSpinner: initing spinner");
         ArrayList<String> types = new ArrayList<>();
+        time=" ";
+        eventTime.setText("time");
 
         types.add("type");
         types.add("hair color");
@@ -218,7 +220,11 @@ public class EventDialog extends Dialog implements nextValidCallBack {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveNewEvent();
+                if(type!=" "&&time!=" ")
+                     saveNewEvent();
+                else
+                    Toast.makeText(getContext(), "YOU HAVE TO CHOOSE EVENT TYPE AND TIME!!", Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -228,13 +234,14 @@ public class EventDialog extends Dialog implements nextValidCallBack {
 
                 if (type.equals(" ") || type.equals("type"))
                     Toast.makeText(getContext(), "YOU HAVE TO CHOOSE EVENT TYPE FIRST!!", Toast.LENGTH_LONG).show();
-
-                int currentHour=currentHour();
-                int currentMinute =currentMinute();
-                if (currentHour<0)
-                    Toast.makeText(getContext(), "THERE IS NO VALID TIME FOR "+type+" ,PLEASE TRY ANOTHER DATE", Toast.LENGTH_LONG).show();
-                else
-                    initTimePicker(currentHour,currentMinute);
+                else {
+                    int currentHour = currentHour();
+                    int currentMinute = currentMinute();
+                    if (currentHour < 0)
+                        Toast.makeText(getContext(), "THERE IS NO VALID TIME FOR " + type + " ,PLEASE TRY ANOTHER DATE", Toast.LENGTH_LONG).show();
+                    else
+                        initTimePicker(currentHour, currentMinute);
+                }
             }
         });
     }

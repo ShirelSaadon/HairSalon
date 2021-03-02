@@ -39,8 +39,10 @@ public class RecycleViewAppointmentAdapter extends RecyclerView.Adapter<RecycleV
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: ");
         Appointment temp = dailyList.get(position);
+        Log.d(TAG, "onBindViewHolder: "+temp.toString());
         String type = temp.getType();
         String time = temp.getTime();
+        Log.d(TAG, "onBindViewHolder: "+type);
         holder.name.setText(type);
         holder.hour.setText(time);
     }

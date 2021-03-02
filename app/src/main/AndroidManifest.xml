@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HairSalon">
-        <activity android:name="Activitys.ConstomerTellsActivity"></activity>
+        <activity android:name="Activitys.CustomerTellsActivity"></activity>
         <activity android:name="Activitys.ActivityLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

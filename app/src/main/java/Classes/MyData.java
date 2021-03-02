@@ -1,21 +1,13 @@
 package Classes;
 
-import android.content.Context;
-import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import Fragments.CalendarFragment;
 
 public class MyData {
     private static MyData instence;
@@ -27,6 +19,7 @@ public class MyData {
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     FirebaseStorage storage = FirebaseStorage.getInstance();
     DatabaseReference usersRef = database.getReference("users");
+    DatabaseReference reviewsRef = database.getReference("reviews");
     DatabaseReference eventsRef = database.getReference("events");
     DatabaseReference disableHRef = database.getReference("disableHours");
 
@@ -57,5 +50,9 @@ public class MyData {
 
     public DatabaseReference getDisableHRef() {
         return disableHRef;
+    }
+
+    public DatabaseReference getReviewsRef() {
+        return reviewsRef;
     }
 }

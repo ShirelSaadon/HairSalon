@@ -3,8 +3,12 @@ package Classes;
 import android.Manifest;
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class Camera {
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
@@ -14,9 +18,9 @@ public class Camera {
     public void Camera(Activity activity){
         this.activity=activity;
     }
-//
-//    public void checkPermission(String permission, int requestCode) {
-//
+
+    public void checkPermission(String permission, int requestCode) {
+
 //        // Checking if permission is not granted
 //        if (ContextCompat.checkSelfPermission(this,
 //                Manifest.permission.CAMERA)
@@ -51,35 +55,35 @@ public class Camera {
 //            Toast.makeText(activity, "Permission already granted",Toast.LENGTH_SHORT).show();
 //
 //    }
-
-    public void showAlert() {
-        AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
-        alertDialog.setTitle("Alert");
-        alertDialog.setMessage("App needs to access the Camera.");
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ALLOW",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        ActivityCompat.requestPermissions(activity,
-                                new String[]{Manifest.permission.CAMERA},
-                                MY_PERMISSIONS_REQUEST_CAMERA);
-                    }
-                });
-        alertDialog.show();
-    }
-
-  //  private void openCamera() {
-   //     Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-    //    startActivity(intent);
-    //}
-
-
+//
+//    public void showAlert() {
+//        AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+//        alertDialog.setTitle("Alert");
+//        alertDialog.setMessage("App needs to access the Camera.");
+//        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "DONT ALLOW",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "ALLOW",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                        ActivityCompat.requestPermissions(activity,
+//                                new String[]{Manifest.permission.CAMERA},
+//                                MY_PERMISSIONS_REQUEST_CAMERA);
+//                    }
+//                });
+//        alertDialog.show();
+//    }
+//
+//    private void openCamera() {
+//        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+//        startActivity(intent);
+//    }
+//
+//
 //    @Override
 //    public void onRequestPermissionsResult(int requestCode,
 //                                           String permissions[], int[] grantResults) {
@@ -104,12 +108,12 @@ public class Camera {
 //            }
 //            return;
 //        }
+//
+//        // other 'case' lines to check for other
+//        // permissions this app might request
+//
+//    }
+}
 
-        // other 'case' lines to check for other
-        // permissions this app might request
 
-    }
-//}
-
-
-//}
+}

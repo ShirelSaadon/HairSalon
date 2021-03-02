@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Classes.Appointment;
+import Classes.MyData;
 import Decorators.DayEnableDecorator;
 
 
@@ -65,8 +66,28 @@ public class CalendarFragment extends Fragment {
     private void initEnableDays(){
 
     }
-
+//    private void updateData() {
+//        Log.d(TAG, "updateData: ");
+//        MyData.getInstence().getEventsRef().addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for(DataSnapshot eventSnapshot : snapshot.getChildren()){
+//                    Log.d(TAG, "onDataChange: "+eventSnapshot.getKey() +CalendarDay.today().toString());
+//                    if(eventSnapshot.getKey().compareTo(CalendarDay.today().toString())<0)
+//                        MyData.getInstence().getEventsRef().child(eventSnapshot.getKey()).removeValue();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });{
+//
+//        }
+//    }
     private void initCalendar() {
+        //updateData();
         Log.d(TAG, "initCalendar: Initing calendar");
         calendarView = view.findViewById(R.id.calendarView);
         calendarView.setSelectionMode(MaterialCalendarView.SELECTION_MODE_SINGLE);

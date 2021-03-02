@@ -1,5 +1,6 @@
 package Activitys;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -8,14 +9,19 @@ import android.util.Log;
 
 import com.example.hairsalon.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import Classes.Appointment;
+import Classes.MyData;
 import Fragments.CalendarFragment;
 import Fragments.DayListFragment;
 
@@ -46,8 +52,9 @@ public class CalendarEventsActivity extends AppCompatActivity {
         //initBtnAddEvent();
         initCalenderFragment();
         initListFragment();
-
     }
+
+
 
     private void initCalenderFragment(){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

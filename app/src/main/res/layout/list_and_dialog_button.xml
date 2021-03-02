@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RECYCLER_VIEW_dailyFragment"
+        android:id="@+id/RECYCLER_VIEW"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -22,9 +22,9 @@
             android:layout_height="137dp"
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/RECYCLER_VIEW_dailyFragment"
+            app:layout_constraintBottom_toBottomOf="@+id/RECYCLER_VIEW"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/RECYCLER_VIEW_dailyFragment" />
+            app:layout_constraintStart_toStartOf="@+id/RECYCLER_VIEW" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

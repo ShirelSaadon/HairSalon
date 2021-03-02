@@ -25,13 +25,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import Classes.MyData;
 import Classes.User;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity  {
 
     private static final String TAG = "HOME_AC";
+    private static final String userExtra="USER_EXTRA" ;
+
     private static Context context;
     private User user ;
     private String name;
@@ -137,7 +140,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void customersTellActivity() {
-
+        Log.d(TAG, "customersTellActivity: ");
+        Intent myIntent = new Intent(HomeActivity.this, CustomerTellsActivity.class);
+        Gson gson = new Gson();
+        String userJson= gson.toJson(user);
+        myIntent.putExtra(userExtra,userJson);
+        Log.d(TAG, "customersTellActivity: AFTER PUT EXTRA");
+        startActivity(myIntent);
     }
 
     private void servicesActivity() {
@@ -149,4 +158,6 @@ public class HomeActivity extends AppCompatActivity {
     public static Context getAppContext() {
         return HomeActivity.context;
     }
+
+
 }

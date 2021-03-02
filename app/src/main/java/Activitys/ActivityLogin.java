@@ -47,10 +47,6 @@ public class ActivityLogin extends AppCompatActivity {
                         .setAvailableProviders(Arrays.asList(
                                 new AuthUI.IdpConfig.PhoneBuilder().build()
                         ))
-                        //.setLogo(R.drawable.ic_logo_s)
-                        //.setTosAndPrivacyPolicyUrls(
-                          //      "https://example.com/terms.html",
-                            //    "https://example.com/privacy.html"
                         .build(),
                 RC_SIGN_IN);
     }

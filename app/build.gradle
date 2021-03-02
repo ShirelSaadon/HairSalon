@@ -68,6 +68,8 @@ dependencies {
             // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:7.1.1'
 
+    implementation 'com.google.code.gson:gson:2.8.5'
+
 
 
 

@@ -22,6 +22,7 @@ import java.util.List;
 
 import CallBack.nextValidCallBack;
 import Classes.Appointment;
+import Classes.MyData;
 import Fragments.CalendarFragment;
 
 public class RangeTimePickerDialog extends TimePickerDialog {
@@ -74,9 +75,7 @@ public class RangeTimePickerDialog extends TimePickerDialog {
     /**this function read from firebase "disableHours" reference the hours that are not available
      * also calls the functions - initAbleHours & initIntervalMinutes**/
     public void initDisableHours(){
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference eventRef = database.getReference("disableHours");
-        eventRef.child(CalendarFragment.getInstance().getSelectedDay().toString()).addListenerForSingleValueEvent(
+        MyData.getInstence().getDisableHRef().child(CalendarFragment.getInstance().getSelectedDay().toString()).addListenerForSingleValueEvent(
                 new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

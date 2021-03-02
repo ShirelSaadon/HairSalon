@@ -6,7 +6,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,12 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.hairsalon.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 
@@ -31,7 +28,7 @@ import Adapters.RecycleViewAppointmentAdapter;
 import Classes.Appointment;
 import Classes.MyData;
 import Dialogs.EventDialog;
-import Dialogs.RangeTimePickerDialog;
+
 
 public class DayListFragment extends Fragment {
     private static final String TAG = "DayListFRG";
@@ -62,9 +59,9 @@ public class DayListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView");
         if (view == null)
-            view = inflater.inflate(R.layout.fragment_day_list, container, false);
+            view = inflater.inflate(R.layout.list_and_dialog_button, container, false);
 
-        recyclerView = view.findViewById(R.id.RECYCLER_VIEW_dailyFragment);
+        recyclerView = view.findViewById(R.id.RECYCLER_VIEW);
         initBtnAddEvent();
         return view;
     }
@@ -148,7 +145,7 @@ public class DayListFragment extends Fragment {
     }
     public void populatelist(DataSnapshot dataSnapshot,CalendarDay date) {
         dailyList.removeAll(dailyList);
-       // MyData.getInstence().getDisableHRef().child(date.toString()).removeValue();
+       MyData.getInstence().getDisableHRef().child(date.toString()).removeValue();
         for (DataSnapshot eventSnapshot : dataSnapshot.getChildren()) {
             Appointment app = eventSnapshot.getValue(Appointment.class);
             updateDisableHours(date,app);
@@ -157,7 +154,7 @@ public class DayListFragment extends Fragment {
 
             if (dailyList.size() == dataSnapshot.getChildrenCount()) {
                 Collections.sort(dailyList);
-                recyclerView = view.findViewById(R.id.RECYCLER_VIEW_dailyFragment);
+                recyclerView = view.findViewById(R.id.RECYCLER_VIEW);
                 recyclerView.setVisibility(View.VISIBLE);
                 RecycleViewAppointmentAdapter adapter = new RecycleViewAppointmentAdapter(getContext(), dailyList);
                 recyclerView.setAdapter(adapter);
